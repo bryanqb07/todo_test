@@ -7,8 +7,8 @@ import Root from './components/root'
 // import { allTodos } from './reducers/selectors';
 // window.allTodos = allTodos;
 window.store = store;
-import { receiveTodos, receiveTodo } from './actions';
-import { removeTodo } from './actions';
+import { receiveTodos, receiveTodo } from './actions/todo_actions';
+import { removeTodo } from './actions/todo_actions';
 window.removeTodo = removeTodo;
 window.targetTodo = {id: 1}
 window.receiveTodos = receiveTodos;

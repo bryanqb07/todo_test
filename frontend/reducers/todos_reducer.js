@@ -1,4 +1,4 @@
-import { RECEIVE_TODO, RECEIVE_TODOS, REMOVE_TODO } from '../actions';
+import { RECEIVE_TODO, RECEIVE_TODOS, REMOVE_TODO } from '../actions/todo_actions';
 import merge  from 'lodash/merge'
 
 
