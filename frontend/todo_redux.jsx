@@ -6,13 +6,13 @@ import Root from './components/root'
 
 // WINDOW TESTING -- DELETE AFTER LAUNCH
 
-import { allTodos, allSteps } from './reducers/selectors';
+import { allTodos, allSteps, stepsByTodoId } from './reducers/selectors';
 window.allTodos = allTodos;
 window.allSteps = allSteps;
+window.stepsByTodoId = stepsByTodoId;
 window.store = store;
 import { receiveTodos, receiveTodo, removeTodo  } from './actions/todo_actions';
 import { receiveSteps, receiveStep, removeStep } from './actions/step_actions';
-
 window.receiveSteps = receiveSteps;
 window.receiveStep = receiveStep;
 window.removeStep = removeStep;
