@@ -28,8 +28,9 @@ const testTodo = {
 }
 
 window.testTodo = testTodo;
-
 window.update = update;
+
+
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const rootEl = document.getElementById("content")
