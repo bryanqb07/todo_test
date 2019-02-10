@@ -22,7 +22,6 @@ class TodoListItem extends React.Component{
             done: doneToggle
         }
         this.props.receiveTodo(updatedTodo)
-        console.log(this.props.todo.done);
     }
 
     toggleDoneState(prevState){

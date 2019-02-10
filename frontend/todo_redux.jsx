@@ -6,9 +6,8 @@ import Root from './components/root'
 
 // WINDOW TESTING -- DELETE AFTER LAUNCH
 
-import { allTodos, allSteps, stepsByTodoId } from './reducers/selectors';
+import { allTodos, stepsByTodoId } from './reducers/selectors';
 window.allTodos = allTodos;
-window.allSteps = allSteps;
 window.stepsByTodoId = stepsByTodoId;
 window.store = store;
 import { receiveTodos, receiveTodo, removeTodo  } from './actions/todo_actions';
