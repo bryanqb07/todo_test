@@ -6,5 +6,6 @@ const mapDispatchToProps = dispatch => ({
     removeTodo: id => dispatch(removeTodo(id))
 })
 
-connect(null,
-    mapDispatchToProps)(TodoDetailView)
+export default connect(null,
+    mapDispatchToProps
+    )(TodoDetailView)

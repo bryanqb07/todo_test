@@ -1,16 +1,17 @@
 import React from 'react';
+import TodoDetailViewContainer from './todo_detail_view_container'
+
 
 class TodoListItem extends React.Component{
     constructor(props){
         super(props);
-        this.handleClickDelete = this.handleClickDelete.bind(this);
+        this.state = {detail: false};
         this.handleClickDone = this.handleClickDone.bind(this);
         this.toggleDoneState = this.toggleDoneState.bind(this);
+        this.toggleDetail = this.toggleDetail.bind(this);
     }
 
-    handleClickDelete(e){
-        this.props.removeTodo(this.props.todo.id);
-    }
+
 
     handleClickDone(e){
         let doneToggle = this.toggleDoneState(this.props.todo.done);
@@ -32,18 +33,40 @@ class TodoListItem extends React.Component{
         }
     }
 
+    toggleDetail(){
+        if(this.state.detail){
+            this.setState({detail: false});
+        }else{
+            this.setState({detail: true});
+        }
+    }
+
     render(){
-        return (
-            <div>
-                <li >{this.props.todo.title}</li>
-                <button onClick={this.handleClickDone}>
-                {
-                    this.props.todo.done ? "Completed" : "Incomplete"
-                }
-            </button>
-                <button onClick={this.handleClickDelete}>Remove</button>
-            </div>
+        if(this.state.detail){
+            return(
+                <div>
+                    <li onClick={this.toggleDetail}>{this.props.todo.title}</li>
+                    <button onClick={this.handleClickDone}>
+                    {
+                        this.props.todo.done ? "Completed" : "Incomplete"
+                    }
+                    </button>
+                    <TodoDetailViewContainer id={this.props.todo.id} /> 
+                </div>
             )
+        }else{
+            return (
+                <div>
+                    <li onClick={this.toggleDetail} >{this.props.todo.title}</li>
+                    <button onClick={this.handleClickDone}>
+                        {
+                            this.props.todo.done ? "Completed" : "Incomplete"
+                        }
+                    </button>
+                </div>
+            )
+        }
+        
     }
 
 
