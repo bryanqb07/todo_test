@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import store from './store';
+import configureStore from './store';
 import Root from './components/root'
 
 // WINDOW TESTING -- DELETE AFTER LAUNCH
@@ -9,7 +9,7 @@ import Root from './components/root'
 import { allTodos, stepsByTodoId } from './reducers/selectors';
 window.allTodos = allTodos;
 window.stepsByTodoId = stepsByTodoId;
-window.store = store;
+// window.store = store;
 import { receiveTodos, receiveTodo, removeTodo  } from './actions/todo_actions';
 import { receiveSteps, receiveStep, removeStep } from './actions/step_actions';
 window.receiveSteps = receiveSteps;
@@ -50,6 +50,9 @@ window.testStep = testStep;
 //////////////////////////// 
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    const preloadedState = (localStorage.state) ?
+        JSON.parse(localStorage.state) : {};
+    const store = configureStore(preloadedState);
     const rootEl = document.getElementById("content")
     ReactDOM.render(<Root store={store} />, rootEl);
 })
