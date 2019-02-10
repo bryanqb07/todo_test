@@ -14,6 +14,7 @@ const StepList = ({ steps, todo_id, receiveStep}) => (
                 )
             }
         </ul>
+        <br/><br/>
         <StepForm receiveStep={receiveStep} todo_id={todo_id} />
     </div>
 )

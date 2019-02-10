@@ -7,7 +7,7 @@ class StepListItem extends React.Component{
     }
 
     handleClick(e){
-        this.props.removeStep(this.props.step);
+        this.props.removeStep(this.props.step.id);
     }
 
     render(){

@@ -18,7 +18,7 @@ export const receiveStep = (stepItem) => ({
     stepItem
 })
 
-export const removeStep = step => ({
+export const removeStep = id => ({
     type: REMOVE_STEP,
-    id: step.id
+    id
 })

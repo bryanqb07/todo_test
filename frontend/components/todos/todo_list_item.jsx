@@ -50,7 +50,8 @@ class TodoListItem extends React.Component{
                         this.props.todo.done ? "Completed" : "Incomplete"
                     }
                     </button>
-                    <TodoDetailViewContainer id={this.props.todo.id} /> 
+                    <TodoDetailViewContainer todo={this.props.todo} /> 
+                    <br/><br/>
                 </div>
             )
         }else{
