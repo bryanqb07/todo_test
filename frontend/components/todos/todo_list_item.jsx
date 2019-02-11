@@ -41,28 +41,34 @@ class TodoListItem extends React.Component{
     }
 
     render(){
+        const getDetail = this.props.todo.done ? "completed" : "incomplete"
         if(this.state.detail){
             return(
-                <div>
-                    <li onClick={this.toggleDetail}>{this.props.todo.title}</li>
-                    <button onClick={this.handleClickDone}>
-                    {
-                        this.props.todo.done ? "Completed" : "Incomplete"
-                    }
-                    </button>
+                <div className="todo-item-container">
+                    <div className="list-button-container">
+                        <li onClick={this.toggleDetail}>{this.props.todo.title}</li>
+                        <button onClick={this.handleClickDone} className={getDetail}>
+                        {
+                            getDetail
+                        }
+                        </button>
+                    </div>
                     <TodoDetailViewContainer todo={this.props.todo} /> 
                     <br/><br/>
                 </div>
             )
         }else{
             return (
-                <div>
-                    <li onClick={this.toggleDetail} >{this.props.todo.title}</li>
-                    <button onClick={this.handleClickDone}>
-                        {
-                            this.props.todo.done ? "Completed" : "Incomplete"
-                        }
-                    </button>
+                <div className="todo-item-container">
+                    <div className="list-button-container">
+                        <li onClick={this.toggleDetail} >{this.props.todo.title}</li>
+                        <button onClick={this.handleClickDone} 
+                            className={getDetail}>
+                            {
+                                getDetail
+                            }
+                        </button>
+                    </div>
                 </div>
             )
         }

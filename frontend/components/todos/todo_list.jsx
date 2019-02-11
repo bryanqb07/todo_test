@@ -4,7 +4,7 @@ import TodoForm from './todo_form';
 
 
 const TodoList = ({todos, receiveTodo, removeTodo}) => (
-    <div>
+    <div className="todo-body">
         <ul>
             {
                 todos.map((todo, idx) => 

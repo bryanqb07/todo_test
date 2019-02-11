@@ -38,11 +38,11 @@ class TodoForm extends React.Component{
 
     render(){ 
     return (
-        <div>
+        <div className="add-new-todo">
             <b>Add New Todo</b>
             <br/>
-            <br/>
             <form onSubmit={this.handleSubmit}>
+                <div className="form-wrapper">
                 <label htmlFor="title">Title</label>
                 <input
                 id="title"
@@ -50,8 +50,9 @@ class TodoForm extends React.Component{
                 onChange={this.updateValue} 
                 type="text" 
                 value={this.state.titleVal}/>
+                </div>
                 <br/>
-                <br/>
+                <div className="form-wrapper">
                 <label htmlFor="body">Body</label>
                 <input
                     id="body"
@@ -59,7 +60,8 @@ class TodoForm extends React.Component{
                     onChange={this.updateValue}
                     type="text"
                     value={this.state.bodyVal} />
-            
+                </div>
+                <br/>
                 <button>Submit</button>
             </form >
         </div>
